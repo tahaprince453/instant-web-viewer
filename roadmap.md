@@ -1,0 +1,11 @@
+- [x] Replace the rejected blue-heavy palette with restrained neutral surfaces and clearer accents.
+- [x] Make text and section animations replay when entering view and remove the blocking introduction.
+- [x] Verify the palette and scroll animations in the running portfolio.
+- [x] Brighten the professional palette and strengthen smooth scroll motion.
+- [x] Add relevant AI automation imagery.
+- [x] Refresh the profile upload, use a publicly verified photo URL and verify the updated page.
+- [ ] Verify the photo on the published website — blocked until a published website URL is available.
+- [x] Refresh theme and animation styling inspired by the supplied Ayan AI automation portfolio.
+- [x] Verify the updated portfolio, theme switching and scroll motion.
+- [x] Match the reference's information structure and photo presentation while retaining Taha's identity.
+- [x] Verify the revised information and portrait on desktop and mobile.
