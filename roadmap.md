@@ -9,3 +9,4 @@
 - [x] Verify the updated portfolio, theme switching and scroll motion.
 - [x] Match the reference's information structure and photo presentation while retaining Taha's identity.
 - [x] Verify the revised information and portrait on desktop and mobile.
+- [x] Verify the uploaded animated portfolio in desktop and mobile preview.

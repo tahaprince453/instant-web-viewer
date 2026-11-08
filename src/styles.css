@@ -818,3 +818,168 @@ main > section { position: relative; }
   --primary-soft: oklch(0.84 0.1 var(--h));
   --glow: oklch(0.8 0.13 var(--h) / 22%);
 }
+
+/* Animated geometric accents, section progress, and portrait motion. */
+.scroll-progress {
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
+  background-size: 200% 100%;
+  animation: gradient-pan 4s linear infinite alternate;
+}
+
+.scroll-rail {
+  position: fixed;
+  top: 50%;
+  right: 1.1rem;
+  z-index: 55;
+  display: none;
+  height: min(52vh, 440px);
+  transform: translateY(-50%);
+}
+@media (min-width: 1024px) { .scroll-rail { display: block; } }
+.rail-track { position: relative; width: 3px; height: 100%; border-radius: 999px; background: var(--border-strong); }
+.rail-fill {
+  position: absolute;
+  inset: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  border-radius: inherit;
+  background: linear-gradient(180deg, var(--primary), var(--accent));
+}
+.rail-marker {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 3;
+  width: 14px;
+  height: 14px;
+  translate: -50% -50%;
+  border: 2px solid var(--background);
+  border-radius: 50%;
+  background: var(--accent);
+}
+.rail-percent {
+  position: absolute;
+  top: 50%;
+  right: 22px;
+  translate: 0 -50%;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font: 700 0.62rem/1.4 var(--font-display);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.rail-marker:hover .rail-percent { opacity: 1; }
+.rail-dot {
+  position: absolute;
+  left: 50%;
+  z-index: 2;
+  width: 11px;
+  height: 11px;
+  translate: -50% -50%;
+  border: 2px solid var(--border-strong);
+  border-radius: 50%;
+  background: var(--background);
+  transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+.rail-dot-done { border-color: var(--primary); background: var(--primary); }
+.rail-dot-active, .rail-dot:hover { transform: scale(1.4); border-color: var(--accent); }
+.rail-label {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  translate: 6px -50%;
+  padding: 3px 9px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--foreground);
+  font: 600 0.68rem/1.3 var(--font-sans);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, translate 0.25s ease;
+}
+.rail-dot:hover .rail-label, .rail-dot:focus-visible .rail-label { translate: 0 -50%; opacity: 1; }
+
+.shape { position: absolute; translate: 0 var(--py, 0px); opacity: 0.24; }
+.shape > svg {
+  width: 100%;
+  height: 100%;
+  animation: shape-float var(--dur, 10s) ease-in-out infinite alternate;
+}
+@keyframes shape-float { from { transform: translateY(-14px) scale(0.95); } to { transform: translateY(14px) scale(1.06); } }
+[data-speed] { translate: 0 var(--py, 0px); }
+
+.portrait-pulse {
+  position: absolute;
+  inset: 15%;
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+  opacity: 0;
+  animation: portrait-pulse 3.6s ease-out infinite;
+}
+@keyframes portrait-pulse { 0% { transform: scale(1); opacity: 0.4; } 100% { transform: scale(1.7); opacity: 0; } }
+.portrait-dash { border: 1px dashed color-mix(in oklab, var(--primary) 45%, transparent); }
+.portrait-dash-a { animation: spin 38s linear infinite; }
+.portrait-dash-b { border-color: color-mix(in oklab, var(--accent) 45%, transparent); animation: spin-reverse 26s linear infinite; }
+@keyframes spin { to { rotate: 360deg; } }
+@keyframes spin-reverse { to { rotate: -360deg; } }
+.orbiter { position: absolute; inset: 0; animation: spin var(--dur) linear infinite; animation-delay: var(--delay); }
+.orbiter-inner { inset: 7%; animation-name: spin-reverse; }
+.orbiter-chip {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  translate: -50% -50%;
+  background: var(--card);
+  animation: spin-reverse var(--dur) linear infinite;
+  animation-delay: var(--delay);
+}
+.orbiter-inner .orbiter-chip { animation-name: spin; }
+.portrait-spin-ring { position: relative; isolation: isolate; padding: 6px; }
+.portrait-spin-ring::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, var(--primary), var(--accent), transparent 35%, var(--accent) 60%, var(--primary));
+  content: "";
+  animation: spin 5s linear infinite;
+}
+.portrait-scan {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, color-mix(in oklab, var(--primary) 24%, transparent) 50%, transparent 60%);
+  transform: translateY(-100%);
+  animation: portrait-scan 5s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes portrait-scan { 0%, 20% { transform: translateY(-100%); } 70%, 100% { transform: translateY(100%); } }
+.portrait-badge {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 11px;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--primary-soft);
+  font: 700 0.68rem/1 var(--font-display);
+  animation: badge-float 5s ease-in-out infinite;
+}
+.portrait-badge-a { top: 12%; left: -2%; }
+.portrait-badge-b { right: -1%; bottom: 10%; animation-delay: -2.5s; }
+@keyframes badge-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -8px; } }
+@media (max-width: 640px) { .portrait-badge { padding: 5px 9px; font-size: 0.6rem; } }
+.hero-grid { animation: grid-drift 24s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .shape > svg, .portrait-pulse, .portrait-dash, .orbiter, .orbiter-chip,
+  .portrait-spin-ring::before, .portrait-scan, .portrait-badge, .scroll-progress { animation: none !important; }
+  .shape, [data-speed] { translate: none; }
+}

@@ -2,6 +2,7 @@ import { Cpu, Bot, Mic, MessageCircle, PlaySquare, Filter, BookOpen } from "luci
 import { AnimatedText } from "./TextEffects";
 import { Reveal, SectionHeading } from "./Reveal";
 import { cn } from "@/lib/utils";
+import { ShapeField } from "./MotionKit";
 
 const services = [
   {
@@ -44,7 +45,8 @@ const services = [
 export function Services() {
   return (
     <section id="services" className="relative bg-secondary/45 py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+      <ShapeField variant={1} />
+      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
           eyebrow="Services"
           title={

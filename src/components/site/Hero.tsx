@@ -2,6 +2,7 @@ import { ArrowRight, Instagram, Linkedin, Mail, Phone } from "lucide-react";
 import { PortraitVisual } from "./PortraitVisual";
 import { AnimatedText, Typewriter } from "./TextEffects";
 import { Magnetic } from "./Interactive";
+import { ShapeField } from "./MotionKit";
 import { Button } from "@/components/ui/button";
 
 const specialities = ["AI Agents", "Workflow Automation", "Lead Qualification", "Document Processing", "Customer Support Automation"];
@@ -15,9 +16,10 @@ const contacts = [
 export function Hero() {
   return (
     <section id="home" className="relative overflow-hidden pb-16 pt-28 sm:pb-20 sm:pt-36">
+      <ShapeField variant={0} />
       <div className="hero-grid grid-bg pointer-events-none absolute inset-0 opacity-40" aria-hidden />
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
-        <div>
+        <div data-speed="0.025">
           <div className="rise inline-flex max-w-full items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-3 py-2">
             <span className="status-indicator size-1.5 shrink-0 rounded-full bg-primary" />
             <span className="text-[0.65rem] font-semibold uppercase text-primary-soft">AI Automation Specialist &amp; Agent Developer</span>
@@ -36,7 +38,7 @@ export function Hero() {
             ))}
           </div>
         </div>
-        <div className="rise min-w-0 px-3 py-4"><PortraitVisual /></div>
+        <div className="rise min-w-0 px-3 py-4" data-speed="-0.05"><PortraitVisual /></div>
       </div>
     </section>
   );

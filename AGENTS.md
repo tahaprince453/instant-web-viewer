@@ -18,3 +18,4 @@
 - Resolve the profile asset pointer against its verified public asset host rather than the deployment origin; this keeps the portrait independent of published-site asset proxy availability.
 - Import generated automation imagery into the existing About section; illustrative images stay separate from actual project evidence.
 - Theme colors live only in semantic tokens: the default `:root` (bright "day") and `[data-theme="night"]` in `src/styles.css`, switched via `data-theme` on `<html>` (use `setAttribute`/`getAttribute`, not `dataset`, for TS index-signature rules); components never hardcode colors — this keeps both schemes consistent and dark-mode safe.
+- Keep shared scroll motion, progress navigation, and geometric section accents in `src/components/site/MotionKit.tsx` so presentation effects stay reusable and isolated.
