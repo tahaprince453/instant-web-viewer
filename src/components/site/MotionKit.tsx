@@ -169,7 +169,7 @@ function ShapeSvg({ kind }: { kind: ShapeKind }) {
 export function ShapeField({ variant = 0 }: { variant?: 0 | 1 }) {
   return (
     <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
-      {shapePresets[variant].map((shape, index) => (
+      {(shapePresets[variant] ?? shapePresets[0]).map((shape, index) => (
         <span
           key={`${variant}-${index}`}
           className={cn("shape", shape.accent ? "text-accent" : "text-primary", index > 2 && "hidden sm:block")}
