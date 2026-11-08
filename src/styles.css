@@ -869,7 +869,10 @@ main > section { position: relative; }
   color: var(--primary-foreground);
   font: 700 0.62rem/1.4 var(--font-display);
   white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
+.rail-marker:hover .rail-percent { opacity: 1; }
 .rail-dot {
   position: absolute;
   left: 50%;
@@ -900,7 +903,7 @@ main > section { position: relative; }
   pointer-events: none;
   transition: opacity 0.25s ease, translate 0.25s ease;
 }
-.rail-dot:hover .rail-label, .rail-dot-active .rail-label { translate: 0 -50%; opacity: 1; }
+.rail-dot:hover .rail-label, .rail-dot:focus-visible .rail-label { translate: 0 -50%; opacity: 1; }
 
 .shape { position: absolute; translate: 0 var(--py, 0px); opacity: 0.24; }
 .shape > svg {

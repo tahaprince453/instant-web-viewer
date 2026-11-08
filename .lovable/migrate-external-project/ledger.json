@@ -2,7 +2,7 @@
   "source": "code-archive",
   "archive": "see-it-now-animated.zip",
   "capabilities": [
-    { "capability": "code", "source": "uploaded ZIP", "outcome": "Apply the updated portfolio presentation", "status": "in_progress", "next_action": "Update the changed presentation files and verify the preview" },
+    { "capability": "code", "source": "uploaded ZIP", "outcome": "Applied the updated portfolio presentation to the preview", "status": "verified", "next_action": null },
     { "capability": "schema", "source": "uploaded ZIP", "outcome": "No database schema detected", "status": "not_applicable", "next_action": null },
     { "capability": "records", "source": "uploaded ZIP", "outcome": "No record exports detected", "status": "not_applicable", "next_action": null },
     { "capability": "auth", "source": "uploaded ZIP", "outcome": "No authentication capability detected", "status": "not_applicable", "next_action": null },
@@ -15,6 +15,6 @@
     { "capability": "schedules", "source": "uploaded ZIP", "outcome": "No scheduled jobs detected", "status": "not_applicable", "next_action": null },
     { "capability": "secrets", "source": "uploaded ZIP", "outcome": "No required secret variables detected", "status": "not_applicable", "next_action": null },
     { "capability": "cutover", "source": "uploaded ZIP", "outcome": "Static portfolio preview only", "status": "not_applicable", "next_action": null },
-    { "capability": "verification", "source": "uploaded ZIP", "outcome": "Preview verification pending", "status": "pending", "next_action": "Check desktop and mobile preview rendering and browser errors" }
+    { "capability": "verification", "source": "uploaded ZIP", "outcome": "Desktop and mobile previews checked; no browser errors or horizontal overflow", "status": "verified", "next_action": null }
   ]
 }

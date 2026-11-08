@@ -54,7 +54,6 @@ export function ScrollMotion() {
 export function ScrollRail() {
   const fillRef = useRef<HTMLDivElement>(null);
   const markerRef = useRef<HTMLDivElement>(null);
-  const percentRef = useRef<HTMLSpanElement>(null);
   const [active, setActive] = useState("home");
   const [dots, setDots] = useState<number[]>(() => railSections.map((_, index) => index / (railSections.length - 1)));
   const [progress, setProgress] = useState(0);
@@ -69,7 +68,6 @@ export function ScrollRail() {
       const nextProgress = maxScroll > 0 ? Math.min(1, Math.max(0, root.scrollTop / maxScroll)) : 0;
       if (fillRef.current) fillRef.current.style.transform = `scaleY(${nextProgress})`;
       if (markerRef.current) markerRef.current.style.top = `${nextProgress * 100}%`;
-      if (percentRef.current) percentRef.current.textContent = `${Math.round(nextProgress * 100)}%`;
       setProgress((previous) => (Math.abs(previous - nextProgress) > 0.01 ? nextProgress : previous));
     };
     const onScroll = () => {
@@ -126,7 +124,7 @@ export function ScrollRail() {
           </a>
         ))}
         <div ref={markerRef} className="rail-marker" aria-hidden="true">
-          <span ref={percentRef} className="rail-percent">0%</span>
+          <span className="rail-percent">{Math.round(progress * 100)}%</span>
         </div>
       </div>
     </aside>
