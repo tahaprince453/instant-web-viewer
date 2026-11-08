@@ -1,0 +1,20 @@
+{
+  "source": "code-archive",
+  "archive": "see-it-now-animated.zip",
+  "capabilities": [
+    { "capability": "code", "source": "uploaded ZIP", "outcome": "Apply the updated portfolio presentation", "status": "in_progress", "next_action": "Update the changed presentation files and verify the preview" },
+    { "capability": "schema", "source": "uploaded ZIP", "outcome": "No database schema detected", "status": "not_applicable", "next_action": null },
+    { "capability": "records", "source": "uploaded ZIP", "outcome": "No record exports detected", "status": "not_applicable", "next_action": null },
+    { "capability": "auth", "source": "uploaded ZIP", "outcome": "No authentication capability detected", "status": "not_applicable", "next_action": null },
+    { "capability": "authorization", "source": "uploaded ZIP", "outcome": "No authorization capability detected", "status": "not_applicable", "next_action": null },
+    { "capability": "uploaded file bytes", "source": "uploaded ZIP", "outcome": "No application file storage detected", "status": "not_applicable", "next_action": null },
+    { "capability": "external providers", "source": "uploaded ZIP", "outcome": "No external provider integrations detected", "status": "not_applicable", "next_action": null },
+    { "capability": "public endpoints", "source": "uploaded ZIP", "outcome": "No public endpoints detected", "status": "not_applicable", "next_action": null },
+    { "capability": "callbacks", "source": "uploaded ZIP", "outcome": "No callbacks detected", "status": "not_applicable", "next_action": null },
+    { "capability": "webhooks", "source": "uploaded ZIP", "outcome": "No webhooks detected", "status": "not_applicable", "next_action": null },
+    { "capability": "schedules", "source": "uploaded ZIP", "outcome": "No scheduled jobs detected", "status": "not_applicable", "next_action": null },
+    { "capability": "secrets", "source": "uploaded ZIP", "outcome": "No required secret variables detected", "status": "not_applicable", "next_action": null },
+    { "capability": "cutover", "source": "uploaded ZIP", "outcome": "Static portfolio preview only", "status": "not_applicable", "next_action": null },
+    { "capability": "verification", "source": "uploaded ZIP", "outcome": "Preview verification pending", "status": "pending", "next_action": "Check desktop and mobile preview rendering and browser errors" }
+  ]
+}
