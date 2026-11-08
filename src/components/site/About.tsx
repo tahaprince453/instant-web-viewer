@@ -4,6 +4,7 @@ import { Reveal, SectionHeading } from "./Reveal";
 import { Tilt } from "./Interactive";
 import { AboutVisuals } from "./AboutVisuals";
 import { ProfilePhoto } from "./ProfilePhoto";
+import { ShapeField } from "./MotionKit";
 import { contacts, coreStack } from "@/data/profile";
 
 const badges = ["Autonomous", "Reliable", "Cost-Effective", "24/7"];
@@ -11,7 +12,8 @@ const badges = ["Autonomous", "Reliable", "Cost-Effective", "24/7"];
 export function About() {
   return (
     <section id="about" className="relative py-24 sm:py-32">
-      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+      <ShapeField variant={1} />
+      <div className="relative z-10 mx-auto max-w-6xl px-5 sm:px-8">
         <SectionHeading
           eyebrow="About"
           title={

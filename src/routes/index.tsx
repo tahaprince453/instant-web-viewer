@@ -9,6 +9,7 @@ import { Stats } from "@/components/site/Stats";
 import { ScrollProgress } from "@/components/site/ScrollEffects";
 import { profilePhotoUrl } from "@/components/site/ProfilePhoto";
 import { CursorGlow } from "@/components/site/CursorGlow";
+import { ScrollMotion, ScrollRail } from "@/components/site/MotionKit";
 
 // Below-the-fold sections are split into separate chunks so the first screen loads faster.
 const Services = lazy(() => import("@/components/site/Services").then((m) => ({ default: m.Services })));
@@ -48,7 +49,9 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <>
+      <ScrollMotion />
       <ScrollProgress />
+      <ScrollRail />
       <CursorGlow />
       <FloatingUI />
       <Nav />

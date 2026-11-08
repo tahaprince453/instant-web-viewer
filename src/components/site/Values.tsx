@@ -1,5 +1,6 @@
 import { AnimatedText } from "./TextEffects";
 import { Reveal, SectionHeading } from "./Reveal";
+import { ShapeField } from "./MotionKit";
 
 const values = [
   {
@@ -20,7 +21,8 @@ export function Values() {
   return (
     <section className="relative py-24 sm:py-32">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[var(--gradient-line)]" />
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+      <ShapeField variant={0} />
+      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading eyebrow="Business Impact" title="Measurable Efficiency. Scalable Growth." />
 
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
